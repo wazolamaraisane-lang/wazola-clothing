@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wazola Clothing - Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- INTERNAL CSS ONLY FOR THE NEW E-COMMERCE DESIGN (as requested) -->
+    <style>
+        /* New e-commerce product card styling - added internally */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e63939;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .product-content {
+            padding: 1.6rem;
+        }
+
+        .product-content h3 {
+            color: #003366;
+            margin-bottom: 0.6rem;
+            font-size: 1.25rem;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .size-tag {
+            background: #f0f4f8;
+            color: #003366;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .price {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #00A6FB;
+        }
+
+        .shop-btn {
+            background: #00A6FB;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #0088cc;
+            transform: scale(1.05);
+        }
+
+        /* Small enhancement to the pricing table */
+        table th {
+            background-color: #003366;
+        }
+        
+        @media (max-width: 768px) {
+            .shop-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">WAZOLA</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="business-model.html">Our Model</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Our Collection & Pricing</h2>
+        
+        <!-- Kept the table for quick price overview (as per rubric - lists) -->
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Popular Brands</th>
+                <th>Price Range</th>
+            </tr>
+            <tr><td>Sneakers</td><td>Adidas, Nike, Puma</td><td>M 400 – M 620</td></tr>
+            <tr><td>Jeans & Trousers</td><td>Levi’s, Chinos</td><td>M 175 – M 330</td></tr>
+            <tr><td>T-Shirts & Polos</td><td>Nike, Adidas, Tommy Hilfiger</td><td>M 405 – M 680</td></tr>
+            <tr><td>Hoodies & Jackets</td><td>Champion, The North Face</td><td>M 195 – M 280</td></tr>
+            <tr><td>Dresses & Skirts</td><td>Various brands</td><td>M 160 – M 210</td></tr>
+        </table>
+
+        <!-- NEW E-COMMERCE STYLE PRODUCT DISPLAY (with images, description, size, price, Shop Now button) -->
+        <h2 style="margin-top:4rem;">Shop Our Products</h2>
+        <div class="shop-grid">
+            
+            <!-- Product 1 - SPECIAL -->
+            <div class="product-card">
+                <img src="images/adidas.jpg" alt="Adidas Yeezy Style Sneakers">
+                <span class="product-badge">SPECIAL OFFER</span>
+                <div class="product-content">
+                    <h3>Adidas Yeezy Style Sneakers</h3>
+                    <p class="product-description">Lightly used premium sneakers. Clean and comfortable for everyday wear.</p>
+                    <div class="sizes">
+                        <span class="size-tag">40</span>
+                        <span class="size-tag">41</span>
+                        <span class="size-tag">42</span>
+                        <span class="size-tag">43</span>
+                    </div>
+                    <div class="price-row">
+                        <p class="price">M 400</p>
+                    </div>
+                    <button onclick="alert('Thank you! Item added to cart (demo). Contact us to purchase.')" class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/levi.jpg" alt="Levi’s 501 Jeans">
+                <div class="product-content">
+                    <h3>Levi’s 501 Jeans</h3>
+                    <p class="product-description">Classic straight-fit denim. Excellent condition, perfect blue wash.</p>
+                    <div class="sizes">
+                        <span class="size-tag">30</span>
+                        <span class="size-tag">32</span>
+                        <span class="size-tag">34</span>
+                    </div>
+                    <div class="price-row">
+                        <p class="price">M 300</p>
+                    </div>
+                    <button onclick="alert('Thank you! Item added to cart (demo). Contact us to purchase.')" class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/nike hoodie.jpg" alt="Nike Tech Hoodie">
+                <div class="product-content">
+                    <h3>Nike Tech Hoodie</h3>
+                    <p class="product-description">Warm and stylish black hoodie. Great for winter in Maseru.</p>
+                    <div class="sizes">
+                        <span class="size-tag">M</span>
+                        <span class="size-tag">L</span>
+                        <span class="size-tag">XL</span>
+                    </div>
+                    <div class="price-row">
+                        <p class="price">M 200</p>
+                    </div>
+                    <button onclick="alert('Thank you! Item added to cart (demo). Contact us to purchase.')" class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <!-- Extra products for better e-commerce look -->
+            <div class="product-card">
+                <img src="images/Nike Dri-Fit T-Shirt.jpg" alt="Nike T-Shirt">
+                <div class="product-content">
+                    <h3>Nike Dri-Fit T-Shirt</h3>
+                    <p class="product-description">Breathable sports tee. Perfect for gym or casual days.</p>
+                    <div class="sizes">
+                        <span class="size-tag">S</span>
+                        <span class="size-tag">M</span>
+                        <span class="size-tag">L</span>
+                    </div>
+                    <div class="price-row">
+                        <p class="price">M 450</p>
+                    </div>
+                    <button onclick="alert('Thank you! Item added to cart (demo). Contact us to purchase.')" class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Puma Windbreaker Jacket.jpg" alt="Puma Jacket">
+                <div class="product-content">
+                    <h3>Puma Windbreaker Jacket</h3>
+                    <p class="product-description">Lightweight and waterproof. Great for Lesotho weather.</p>
+                    <div class="sizes">
+                        <span class="size-tag">M</span>
+                        <span class="size-tag">L</span>
+                    </div>
+                    <div class="price-row">
+                        <p class="price">M 280</p>
+                    </div>
+                    <button onclick="alert('Thank you! Item added to cart (demo). Contact us to purchase.')" class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Flowy Summer Dress.jpg" alt="Summer Dress">
+                <div class="product-content">
+                    <h3>Flowy Summer Dress</h3>
+                    <p class="product-description">Beautiful floral print. Perfect for warm days in Maseru.</p>
+                    <div class="sizes">
+                        <span class="size-tag">S</span>
+                        <span class="size-tag">M</span>
+                    </div>
+                    <div class="price-row">
+                        <p class="price">M 210</p>
+                    </div>
+                    <button onclick="alert('Thank you! Item added to cart (demo). Contact us to purchase.')" class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Wazola Clothing</strong> © 2025 • Metcash Complex, Ha Mafafa, Maseru, Lesotho</p>
+        <p>+266 5757 3960 • wazolamaraisane@gmail.com</p>
+    </footer>
+</body>
+</html>
